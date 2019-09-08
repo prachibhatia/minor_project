@@ -1,0 +1,67 @@
+.project .imageSection
+{
+    background-color:lightgrey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.project .header a{
+    margin-left: 48px;
+    color: #256fdd;
+    font-weight: bold;
+    text-decoration: none;
+}
+.project .header a:hover{
+    color:black;
+}
+.project .quote
+{
+    max-width: 1120px;
+    margin: auto;
+    min-height: 135px;
+    padding: 51px 0 63px;
+    font-size: 30px;
+    color: #fff;
+    /* line-height: 1.5; */
+}
+.impact
+{
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX+pQDLUCusAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=);
+    text-align: center;
+    width: 100%; 
+    color:white; 
+}
+.mission
+{
+    background-color: whitesmoke;
+    height: 370px;
+}
+.vision
+{
+    text-align: center;
+}
+.vision p{
+    margin-top: 30px;
+    font-size: 20px;
+}
+.boilerplate
+{
+background-color:rgb(3, 136, 129);
+/* background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEX+pQDLUCusAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=); */
+text-align: center;
+width: 100%;
+}
+.text
+{
+    background-color: white;
+    width: 556px;
+    height: 185px;
+    margin-top: -150px;
+    margin-left: 25px;
+    opacity:0.8;
+}
+.btn-primary
+{
+   margin-top: 100px;
+   font-size: 40px;
+   margin-bottom: 50px;
+}

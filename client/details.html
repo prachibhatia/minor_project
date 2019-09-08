@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+  <title>School details
+  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="details.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap" rel="stylesheet"> 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body style="background-image: url(330010.jpg)">
+<div class="jumbotron" style="background-color:lightseagreen;">
+      <h1 style="font-size:50px;font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">SCHOOL DETAILS</h1>      
+      <!-- <p>Fill in the complete information below and upload documents in the correct format as specified.</p> -->
+  </div>
+  <div class="formshow">
+   <h4>****Fill in the complete information below and upload documents in the correct format as specified.****</h4>
+  <form action="http://localhost:2001/upload" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="id">School ID:</label>
+      <input type="text" class="form-control" id="myID" disabled>
+    </div>
+    <div class="form-group">
+      <label for="schoolName">School Name:</label>
+      <input type="text" class="form-control"  id="myname" disabled>
+    </div>
+    <div class="form-group">
+      <label for="schoolEmail">School Email:</label>
+      <input type="email" class="form-control"  id="myemail" disabled>
+    </div>
+    <div class="form-group">
+      <label for="schoolAdd">Address:</label>
+      <input type="text" class="form-control" id="myaddress" disabled>
+    </div>
+    <div class="form-group">
+      <label for="sel1">School Location:</label>
+      <select class="form-control" id="mycity" disabled>
+        <option>North Delhi</option>
+        <option>South Delhi</option>
+        <option>East Delhi</option>
+        <option>West Delhi</option>
+      </select>
+    </div> 
+    <div class="form-group">
+      <label for="schoolpin">Pin Code:</label>
+      <input type="text" class="form-control"  id="mypin" disabled>
+    </div>
+    <div class="form-group">
+      <label for="schoolcontact">Contact no:</label>
+      <input type="tel" class="form-control" id="mycontact_no" disabled>
+    </div>
+    <div class="form-group">
+            <label for="totalStudents">Total students:</label>
+            <input type="text"  class="form-control" id="mytotalStudents" name="students">
+          </div>
+          <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="text" class="form-control" id="myyear" name="year">
+              </div>
+              <br>
+    <div class="form-group"> 
+            <h5>****File should be in CSV format and should have the following columns :- Students adhaar card , Student's name , Class , Marks obtained , Total marks , Percentage , Extra curricular activities grade****</h5> 
+            <br>
+            <label for="upload">Upload Result:</label>
+        <input type="file" class="form-control-file border" name="myfile">
+      </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form> 
+  </div>       
+<script src="details.js"></script>
+</body>
+</html>
