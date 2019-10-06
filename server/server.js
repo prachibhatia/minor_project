@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path')
 const app = express();
-const port = process.env.port || 2001
+const port = process.env.port || 4296
 const mysql = require('mysql')
 const session = require('express-session')
 const uuid = require('uuid')
@@ -64,12 +64,32 @@ app.post('/upload',(req,res)=>{
      {
           if(err){
                console.log(err);
-               res.redirect('http://localhost:2001/wrong.html')
+               res.redirect('http://localhost:4296/wrong.html')
           }
           else
           {
-               console.log(req.file);
-               res.redirect('http://localhost:2001/correct.html')
+               console.log(req.file.path);
+               db.getConnection((err , connection) =>{
+                    if(err){
+                         console.log(err);
+                         connection.release();
+                         return ; 
+                    }
+                    else{
+                        console.log(req.body);
+                         console.log("Hello")
+                         connection.query(`load data infile '/home/prachi/Desktop/MyFiles/Project/server/${req.file.path}' into table student_details fields terminated by ',' lines terminated by '\n' (school_id,adhaar_card,student_name,student_class,marks_obtained,total_marks,extra_curricular);` , (err ,rows , fields) =>{
+                              if(err){
+                                   console.log(err)
+                                   return res.send(err)
+                              }
+                              else {
+                              res.redirect('http://localhost:4296/correct.html')
+                              connection.release()
+                              }
+                         })
+                    }
+               })
           }
      });
 });
@@ -106,7 +126,58 @@ app.post('/register',(req,res)=>{
          }
     })
 })
+let schoolIDD;
+let marks=[];
+let curricular=[];
+app.post('/results',(req,res)=>{
+     db.getConnection((err , connection) =>{
+          if(err){
+               console.log(err);
+               connection.release();
+               return ; 
+          }
+          else{
+              console.log(req.body);
+               console.log("Hello")
+               connection.query(`SELECT school_id FROM school_details WHERE school_name = '${req.body.schools}'`, (err ,rows , fields) =>{
+                    if(err){
+                         console.log(err)
+                         return res.send(err)
+                    }
+                    else {
+                         schoolIDD = rows[0].school_id;
+                         console.log(schoolIDD);
 
+                         connection.query(`SELECT marks_obtained,total_marks,extra_curricular FROM student_details WHERE school_id = ${schoolIDD}`, (err ,rows , fields) =>{
+                              if(err){
+                                   console.log(err)
+                                   return res.send(err)
+                              }
+                              else {
+                                   // console.log(rows);
+                                   // rows[0].extra_curricular.trim();
+                                   // console.log(rows[0].extra_curricular);
+                                   for(let i=0;i<rows.length;i++)
+                                   {
+                                      rows[i].extra_curricular.trim();
+                                      marks[i] = (rows[i].marks_obtained/rows[i].total_marks)*100;
+                                      curricular[i] = rows[i].extra_curricular;
+                                   }
+                                   console.log(curricular);
+                                   console.log(marks);
+                                   // connection.release()
+                              }
+                         })
+                         return res.json({
+                              marks_academic : marks,
+                              extra_curricular : curricular
+                         });
+                         // connection.release()
+                    }
+               })
+          }
+     })
+ })
 let activeID ;
 app.post('/auth',(req,res)=>{
     db.getConnection((err , connection) =>{
@@ -140,14 +211,14 @@ app.post('/auth',(req,res)=>{
                 activeID = checkusers.school_id;
                 console.log(activeID);
                 req.session.userId = checkusers.school_id;
-                res.redirect('http://localhost:2001/details')
+                res.redirect('http://localhost:4296/details')
                 // console.log(req.session.userId);
                // res.redirect('http://localhost:4321/')
                 //return res.send({status: "Login"})
              }
            else {
            // return res.send({status: "Login failed"})
-             res.redirect('http://localhost:2001/login')
+             res.redirect('http://localhost:4296/login')
            }
                    }
               })
@@ -180,6 +251,28 @@ app.get('/detailsINFO',(req,res)=>{
              })
         }
    })
+})
+app.get('/resultinfo',(req,res)=>{
+     db.getConnection((err , connection) =>{
+     if(err){
+          console.log(err);
+          connection.release();
+          return ; 
+     }
+     else{
+          connection.query(`SELECT DISTINCT school_name FROM school_details` , (err ,rows , fields) =>{
+               if(err){
+                    console.log(err)
+                    return res.send(err)
+               }
+               else {
+               console.log(rows)
+               return res.send(rows)
+               connection.release()
+               }
+          })
+     }
+})
 })
 
 app.get('/details',(req,res)=>{

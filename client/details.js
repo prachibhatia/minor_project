@@ -8,7 +8,7 @@ let pin = document.getElementById('mypin')
 let contact_no = document.getElementById('mycontact_no')
 const year = document.getElementById('myyear')
 window.onload = ()=>{
-    fetch('http://localhost:2001/detailsINFO')
+    fetch('http://localhost:4296/detailsINFO')
     .then(res => res.text())
     .then(data => {
            data = JSON.parse(data)

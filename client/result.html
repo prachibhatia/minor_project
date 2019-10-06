@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+  <title>Results</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap" rel="stylesheet"> 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</head>
+<body >
+        <div class="jumbotron" style="background-color:lightseagreen;">
+                <h1 style="font-size:50px;font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">SCHOOL WISE ACADEMIC RESULTS</h1>      
+            </div>
+            <form class="form-inline" action="" method="POST">
+                    <div class="nameschool form-group">
+                            <label style="margin-right:10px;margin-left: 450px; ">Select School</label>
+                               <select name="sel1" id="school" class="form-control" style="margin-right:100px;width:300px;">
+                                 
+                               </select>
+                          </div>
+                          <div class="year form-group">
+                            <label style="margin-right:10px;">Year:</label>
+                                <select name="sel2" id="year" class="form-control" style="width: 300px;">
+                                    <option>2019</option>  
+                                </select>
+                         </div>
+                         <div class="buttonHolder" style="margin-left: 50px;margin-top:10px;">
+                                <a href="#" class="button tick" type="sumbit" onclick="updateChart()"></a>
+                              </div>
+            </form>
+            <div class="container">
+              <div class="card">
+                <div class="card-body">
+                <canvas id="mychart"></canvas>
+                </div>
+                <div class="card-body">
+                    <canvas id="mychart2"></canvas>
+                    </div>
+                </div>
+            </div>
+            <script src="result.js"></script>
+    </body>
+    </html>

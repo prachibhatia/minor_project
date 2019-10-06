@@ -35,7 +35,7 @@ SCsubmit.addEventListener('click',function(event){
         pswd : SCpswd.value,
         location : SClocation.value
       }
-    fetch('http://localhost:2001/register',{
+    fetch('http://localhost:4296/register',{
     method : 'POST',
     body: JSON.stringify(datas),
     headers:{
