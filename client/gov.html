@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <title>Government Login
+  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap" rel="stylesheet"> 
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body style="background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
+    <div class="info">
+      </div>
+    <div class="form">
+        <h2> Government Login</h2>
+            <form action="http://localhost:4296/gov" method="POST">
+                <div class="form-group" style="padding-top: 50px;">
+                  <label for="schoolID" style="margin-left: 50px;">Government ID:</label>
+                  <input type="text" id="govid" style="margin-left: 50px;width: 500px;height: 50px;" class="form-control" name="IDlogin">
+                </div>
+                <div class="form-group">
+                  <label for="pwd" style="margin-left: 50px;">Password:</label>
+                  <input type="password" style="margin-left: 50px;width: 500px;height: 50px;"
+                  class="form-control" id="govpwd" name="password">
+                </div>
+                <button type="submit" class="btn" style="width: 500px;margin-left:50px;margin-top:50px;height: 50px;font-size: 18px;background-color: lightseagreen;">Submit</button>
+              </form>
+    </div>
+    </body>
+    <script src="script.js"></script>
+    </html>

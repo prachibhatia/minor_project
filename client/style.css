@@ -54,10 +54,12 @@ height: 180px;
 {
     background-color: white;
     width: 556px;
+    color:darkcyan;
     height: 185px;
     margin-top: -150px;
     margin-left: 25px;
     opacity:0.8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .btn-primary
 {

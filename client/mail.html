@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+  <title> Email
+  </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="govt.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+   	var form=document.getElementById("contact-form");
+   xform.onsubmit = function(e)
+   {
+   	e.preventDefault();
+  	console.log(form.message.value);
+   }
+   
+    </script>	
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap" rel="stylesheet"> 
+  
+  <style type="text/css">
+    .header a{
+    margin-left: 60px;
+    color: #127bb8;
+}
+.formshow
+{
+    width: 800px;
+    margin-left: 550px;
+}
+.contact-form
+{
+	float:center;
+	width: 800px;
+}
+.contact-title
+{margin-top: 100px;
+	color: orange;
+	text-transform: uppercase;
+	transition: all 4s ease-in-out;
+}
+.contact-title h1{
+	font-size:32px;
+	line-height: 10px;
+}
+.form.submit{
+background-color: orange;
+border-color: transparent;
+color: #fff;
+font-size: 20px;
+font-weight: bold;
+letter-spacing: 2px;
+height: 50px;
+margin-top: 20px;
+}
+.form.submit:hover
+{
+	background-color: orange;
+	cursor: pointer;	
+}
+  </style>
+</head>
+<body style="background-image: url(a.jpg)">
+<div class="jumbotron" style="background-color:lightseagreen;">
+      <h1 style="font-size:50px;font-family: Georgia, 'Times New Roman', Times, serif;text-align: center;">Contact Us! </h1>      
+      
+  </div>
+  <div class="formshow">
+		
+	</div>
+	<div class="contact-form">
+		<form id="contact-form" method="post" action="">
+			<input name="name" type="text" class="form-control" placeholder="Name" required>
+			<input name="email" type="email" class="form-control" placeholder="Email" required> <br>
+			<textarea name="message" class="form-control" placeholder="Meassge" row ="10" required ></textarea>
+			<input type="submit" class="form-control submit" value="Send Message">
+		</form>
+
+
+</body>
+</html>

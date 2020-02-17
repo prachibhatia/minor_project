@@ -5,6 +5,8 @@ let year = document.getElementById('year');
 Chart.defaults.global.defaultFontFamily='Lato';
 Chart.defaults.global.defaultFontSize=18;
 Chart.defaults.global.defaultFontColor='#777';
+function updateChart(event)
+{
 var no20=0;
 var no40=0;
 var no60=0;
@@ -15,8 +17,6 @@ var studB = 0;
 var studC = 0;
 var studD = 0;
 var studE = 0;
-function updateChart(event)
-{
     let datas = {
         schools : school.value,
         years : year.value
@@ -33,7 +33,11 @@ function updateChart(event)
           console.log(resp)
           var myObj = JSON.parse(resp);
           console.log(myObj)
-          console.log(typeof myObj.marks_academic[0]);
+          console.log(myObj.marks_academic.length);
+          if(myObj.marks_academic.length==0)
+          {
+            alert(" Data not available ! ");
+          }
           console.log(myObj.extra_curricular[0].charAt(0))
           for(let v=0;v<myObj.extra_curricular.length;v++)
         {
@@ -89,7 +93,7 @@ function updateChart(event)
               no100++;
           }
         }
-   
+      
     //graphs code
 
     let masspopchart = new Chart(mychart,{
@@ -176,13 +180,12 @@ function updateChart(event)
         }
     }
 });
-
-
         })
 }
 
 
-window.onload = ()=>{
+window.onload = (event)=>{
+    event.preventDefault()
     fetch('http://localhost:4296/resultinfo')
     .then(res => res.text())
     .then(data1 => {

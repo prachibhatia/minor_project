@@ -15,11 +15,17 @@
 </head>
 <body style="background-image: url(https://images.unsplash.com/photo-1472289065668-ce650ac443d2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)">
     <div class="info">
+      <h1 style="font-family:serif;padding-top: 100px;;">Steps to follow : -</h1>
+      <h3 style="margin-left: 40px;padding-top: 20px;">Schools : -</h3>
+       <h5 style="padding-top: 10px;margin-left: 40px;font-family:Georgia, 'Times New Roman', Times, serif;">Register with us and login using the details that you entered while <br> registering.<br> This will provide you with your own dashboard where you can fill <br>further details of your school and have to upload the details of your<br> students in the correct csv format.</h5>
+       <h3 style="margin-left: 40px;padding-top: 20px;">Governments / NGO : -</h3>
+       <h5 style="padding-top: 10px;margin-left: 40px;font-family:Georgia, 'Times New Roman', Times, serif;">Register with us and login using the details that you entered while <br>registering.This will provide you with your own dashboard where you<br> can see the detailed analysis and statistics of different schools <br>and students by giving the input. 
 
-    </div>
+          The dashboard will help you to donate<br> if you register with us as an NGO. </h5>
+      </div>
     <div class="form">
         <h2>Login</h2>
-            <form action="http://localhost:2001/auth" method="POST">
+            <form action="http://localhost:4296/auth" method="POST">
                 <div class="form-group" style="padding-top: 50px;">
                   <label for="schoolID" style="margin-left: 50px;">School ID:</label>
                   <input type="text" id="IDD" style="margin-left: 50px;width: 500px;height: 50px;" class="form-control" id="schoolID" name="schoolIDlogin">
@@ -29,12 +35,9 @@
                   <input type="password" style="margin-left: 50px;width: 500px;height: 50px;"
                   class="form-control" id="pwd" name="passwordlogin">
                 </div>
-                <div class="checkbox" style="margin-left: 50px;">
-                  <label><input type="checkbox" name="remember"> Remember me</label>
-                </div>
                 <button type="submit" class="btn" style="width: 500px;margin-left:50px;margin-top:20px;height: 50px;font-size: 18px;background-color: lightseagreen;">Submit</button>
               </form>
-    <p style="margin-left: 50px;margin-top: 40px;"><a href="#">Forgot your password ?</a></p>
+    <p style="margin-left: 50px;margin-top: 40px;"><a href="gov.html">Government / NGO ?</a></p>
     <div class="container">
     <button class="btn" style="margin-left: 35px;margin-top: 10px;color:black;background-color: lightseagreen;" data-toggle="modal" data-target="#myModal">New User ?</button>
     <div class="modal fade" id="myModal" role="dialog">

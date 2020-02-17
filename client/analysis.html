@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Insights</title>
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:700, 600,500,400,300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap" rel="stylesheet"> 
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+   <link rel="stylesheet" href="analysis.css">
+	</head>
+	<body>
+		
+		<div class="header">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>INSIGHTS</span>
+			</div>
+			<a href="#" class="nav-trigger"><span></span></a>
+		</div>
+
+
+		<div class="side-nav">
+			<div class="logo">
+				<i class="fa fa-tachometer"></i>
+				<span>Insights</span>
+			</div>
+
+
+			<nav>
+				<ul>
+					<li>
+						<a href="analysis.html">
+							<span><i class="fa fa-bar-chart"></i></span>
+							<span>Analyitcs</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="donation.html">
+							<span><i class="fa fa-credit-card-alt"></i></span>
+							<span>Donate</span>
+						</a>
+					</li>
+
+
+					<li>
+						<a href="index.html">
+							<span><i class="fa fa-user"></i></span>
+							<span>Log out</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+
+		<div class="main-content">
+			<div class="title">
+				Analytics
+			</div>
+
+			
+			</div>
+			<div class="main">
+
+			</div>
+				
+				<div class="widget">
+					<div class="title">Serach for details</div>
+					<div class="chart"></div>
+
+					<form class="form-inline" action="" method="POST">
+                    <div class="nameschool form-group">
+                            <label style="margin-right:10px;margin-left: 300px;margin-top: 30px">Select School</label>
+                               <select name="school_name" id="school" class="form-control" style="margin-right:100px; width:300px; margin-top: 30px">
+                               </select>
+
+                          </div>
+                          <div class="year form-group">
+                            <label style="margin-right:10px;margin-top: 30px">Select Year</label>
+                                <select name="year" id="year" class="form-control" style="width: 300px;margin-top: 30px">
+                                    <option>2019</option>  
+                                    <option>2020</option>  
+                                    <option>2021</option>  
+
+                                </select>
+                         </div>
+                          <div class="standard form-group">
+                            <label style="margin-right:10px; margin-left:310px; margin-top: 30px"> Select Class</label>
+                                <select name="class" id="student_class" class="form-control" style="width: 300px; margin-right: 100px; margin-top: 30px">
+                                    <option>1</option>  
+                                    <option>2</option>  
+                                    <option>3</option>  
+                                    <option>4</option>  
+                                    <option>5</option>  
+
+                
+                                </select>
+                            </div>
+
+                            <div class="marks form-group">
+                            <label style="margin-right:10px;margin-top: 30px;margin-left:-16px">Marks / Grade</label>
+								<select name="marks_perc" id="marks_obtained" class="form-control" style="width: 300px;margin-top: 30px;margin-left:1px">
+                                    <option>Academics</option>  
+									<option>Dance</option>
+									<option>Music</option>
+									<option>Sports</option>
+									<option>Art</option>
+                                </select>
+                            </div>
+
+                            <div class="grade form-group">
+                            <label style="margin-right:10px;margin-left:275px;margin-bottom:5px;margin-top: 20px">Select range</label>
+                                <select name="grade" id="extra_curricular" class="form-control" style="width: 300px;margin-bottom:10px;margin-left:30px;margin-top: 30px;"> 
+                                </select>
+                         </div>
+                           
+                        
+
+                         <div class="buttonHolder" style="margin-right:10px;margin-top: -20px;margin-left:1600px;">
+                                <input type="SUBMIT" size="100" class="btn btn-warning" onclick="info()">
+                              </div>
+            </form>
+				</div>
+			</div>
+
+				<div class="widget">
+					<div class="title">
+					   <a> Get Results </a>
+					   <div class="chart">
+						   <table class="table table-bordered">
+							   <thead>
+								   <tr>
+									   <th>ADHAAR CARD NO.</th>
+									   <th>NAME</th>
+									   <th>CLASS</th>
+									   <th>MARKS PERCENTAGE</th>
+									   <th>SPORTS</th>
+									   <th>DANCE</th>
+									   <th>MUSIC</th>
+									   <th>ART</th>
+								   </tr>
+							   </thead>
+							   <tbody id="tabledata"></tbody>
+						   </table>
+					   </div>
+				</div>
+				</div>
+			</div>
+        </div>
+        <script src="analysis.js"></script>
+	</body>
+</html>

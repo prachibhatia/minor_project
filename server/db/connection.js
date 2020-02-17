@@ -1,5 +1,5 @@
-const mysql = require('mysql')
-
+const mysql = require('mysql');
+// const bcrypt = require('bcrypt');
 
 const pool = mysql.createPool({
     connectionLimit :15,
@@ -7,6 +7,5 @@ const pool = mysql.createPool({
     host : 'localhost',
     database : 'minor_project'
 })
-
 
 module.exports = pool;

@@ -1,30 +1,32 @@
 window.onload = function(event) {
-        let id = document.getElementById('ID');
-        let idd = document.getElementById('IDD');
-        let SCname = document.getElementById('name');
-        let SCemail = document.getElementById('email');
-        let SCaddress = document.getElementById('Address');
-        let SCpin = document.getElementById('pin');
-        let SCcontactNo = document.getElementById('contactNo');
-        let SCpswd = document.getElementById('pswd');
-        let loginpswd = document.getElementById('pwd');
-        let SClocation = document.getElementById('location');   
-        let SCsubmit = document.getElementById('schoolsubmit');
-        let closebtn = document.getElementById('close');
-        
-        
         SCcontactNo.value=" ";
         SCemail.value=" ";
         id.value=" ";
         SCname.value=" ";
         SCaddress.value=" ";
         SCpin.value=" ";
-        SCpswd.value="";
+        SCpswd.value="";gray
         SClocation.value=" ";
         loginpswd.value = "";
         idd.value=" ";
+        govid.value=" ";
+        govpassword.value=" ";
   }
-SCsubmit.addEventListener('click',function(event){
+  let govid = document.getElementById('govid')
+  let govpassword = document.getElementById('govpwd')
+  let id = document.getElementById('ID');
+  let idd = document.getElementById('IDD');
+  let SCname = document.getElementById('name');
+  let SCemail = document.getElementById('email');
+  let SCaddress = document.getElementById('Address');
+  let SCpin = document.getElementById('pin');
+  let SCcontactNo = document.getElementById('contactNo');
+  let SCpswd = document.getElementById('pswd');
+  let loginpswd = document.getElementById('pwd');
+  let SClocation = document.getElementById('location');  
+  let SCsubmitt = document.getElementById('schoolsubmit');
+  let closebtn = document.getElementById('close');
+   SCsubmitt.addEventListener('click',function(event){
     event.preventDefault()
     console.log('hello');
     let datas = {
